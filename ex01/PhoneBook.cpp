@@ -1,14 +1,14 @@
-/******************************************************************************/
+/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lpetit <lpetit@student.s19.be>             +#+  +:+       +#+        */
+/*   By: lpetit <lpetit@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/18 15:08:58 by lpetit            #+#    #+#             */
-/*   Updated: 2024/07/18 18:15:11 by lpetit           ###   ########.fr       */
+/*   Updated: 2024/11/19 10:37:14 by lpetit           ###   ########.fr       */
 /*                                                                            */
-/******************************************************************************/
+/* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 
@@ -16,7 +16,7 @@ PhoneBook::PhoneBook()
 {
     maxIndex = 0;
     currentIndex = 0;
-    std::cout << "PhoneBook instance created" << std::endl;
+    //std::cout << "PhoneBook instance created" << std::endl;
 }
 
 void    PhoneBook::addContact()
@@ -52,7 +52,9 @@ void    PhoneBook::searchIndex()
     {
         std::getline(std::cin, index_input);
         std::istringstream stream(index_input);
-        if (stream >> index)
+        if (index_input.length() > 1)
+            std::cout << "Invalid index, please enter a valid index" << std::endl;
+        else if (stream >> index)
         {
             if (index >= 1 && index <= maxIndex)
                 break ;
@@ -60,7 +62,8 @@ void    PhoneBook::searchIndex()
                 std::cout << "Invalid index, please enter a valid index" << std::endl;
         }
         else
-            std::cout << "Invalid index, please enter a valid index" << std::endl;
+            return ;
+        //std::cout << "Invalid index, please enter a valid index" << std::endl;
     }
     contact_array[index - 1].display_search();
 }

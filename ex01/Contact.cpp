@@ -1,20 +1,20 @@
-/******************************************************************************/
+/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   Contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lpetit <lpetit@student.s19.be>             +#+  +:+       +#+        */
+/*   By: lpetit <lpetit@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/16 09:20:59 by lpetit            #+#    #+#             */
-/*   Updated: 2024/07/18 18:15:04 by lpetit           ###   ########.fr       */
+/*   Updated: 2024/11/19 10:26:20 by lpetit           ###   ########.fr       */
 /*                                                                            */
-/******************************************************************************/
+/* ************************************************************************** */
 
 #include "Contact.hpp"
 
 Contact::Contact()
 {
-    std::cout << "Contact instance is created" << std::endl;
+    //std::cout << "Contact instance is created" << std::endl;
 }
 
 void    Contact::add(int currentIndex)
@@ -90,7 +90,7 @@ void    Contact::display() const
               << std::setw(10) << std::right << (firstname.size() > 10 ? firstname.substr(0,9) + "." : firstname) << "|"
               << std::setw(10) << std::right << (lastname.size() > 10 ? lastname.substr(0,9) + "." : lastname) << "|"
               << std::setw(10) << std::right << (nickname.size() > 10 ? nickname.substr(0,9) + "." : nickname) << "|";
-    std::cout << std:: endl << std::string(44, '-') << std::endl;
+    std::cout << std:: endl;// << std::string(44, '-') << std::endl;
 }
 
 void    Contact::display_search() const
